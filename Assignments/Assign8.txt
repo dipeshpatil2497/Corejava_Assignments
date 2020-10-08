@@ -1,0 +1,177 @@
+﻿52.	Input name of a person and count how many vowels it contains.  Use String class functions. 
+>   import java.util.Scanner;
+
+//52.	Input name of a person and count how many vowels it contains.  Use String class functions. 
+
+public class Vowels {
+    public static void main(String args[]){
+        String name;
+        Scanner sc = new Scanner(System.in);
+        name = sc.next();
+        int count=0;
+        for(int i=0; i<name.length(); i++){
+            if(Character.toLowerCase(name.charAt(i)) == 'a' ||
+               Character.toLowerCase(name.charAt(i)) == 'e' ||
+               Character.toLowerCase(name.charAt(i)) == 'i' ||
+               Character.toLowerCase(name.charAt(i)) == 'o' ||
+               Character.toLowerCase(name.charAt(i)) == 'u'){
+                count++;
+            }
+
+        }
+        System.out.println(count);
+
+    }
+}
+------------------------------------------------------------------------------------------------------
+
+53.	Input data exactly in the following format, and print sum of all integer values. “67, 89, 23, 67, 12, 55, 66”.   (Hint use String class split method and Integer class parseInt method) .
+>   //53. Input data exactly in the following format, and print sum of all integer values.
+
+import java.util.Scanner;
+public class DataFor {
+    public static void main(String args[]){
+        String str = "67, 89, 23, 67, 12, 55, 66"; 
+        String[] arrOfStr = str.split("[,?.@] +"); 
+
+        int size = arrOfStr.length;
+      int [] arr = new int [size];
+      for(int i=0; i<size; i++) {
+         arr[i] = Integer.parseInt(arrOfStr[i]);
+      }
+      int sum=0;
+        for (int a=0; a<arr.length; a++) 
+            sum += arr[a];
+            System.out.println(sum); 
+
+    } 
+    }
+
+------------------------------------------------------------------------------------------------------------
+
+54.	Write a program to reverse the given String.
+
+public class Rev {
+    public static void main(String args[]){
+        String str = "Jay deepika dabi rupali yash chetan";
+        String[] arrOfStr = str.split(" "); 
+        int size = arrOfStr.length;
+        // for(int i=size; i>0; i--) {
+        //    arr[i] = Integer.parseInt(arrOfStr[i]);
+        // }
+        for(int i=0; i<size; i++)
+            System.out.print(arrOfStr[i]+" ");
+            System.out.println();
+        for(int i=size-1; i>=0; i--)
+            System.out.print(arrOfStr[i]+" ");
+
+    }
+}
+---------------------------------------------------------------------------------------------
+55.	Write a program to count no of words in the String.
+>   
+public class CountW {
+    public static void main(String[] args) {
+        String str = "Jay deepika dabi rupali yash chetan";
+        String[] arrOfStr = str.split(" ");
+        int size = arrOfStr.length;
+        System.out.println(size);         
+    }
+}
+
+----------------------------------------------------------------------------------------------
+56.	Write a program to convert very first character of every word in uppercase in a String.
+>   public class FirstC {
+    public static void main(String[] args) {
+        String str = "Jay deepika dabi rupali yash chetan";
+        String[] arrOfStr = str.split(" ");
+        int size = arrOfStr.length;
+
+        for(int i=0; i<size; i++)
+            System.out.println((Character.toUpperCase(arrOfStr[i].charAt(0)))+arrOfStr[i]);
+        System.out.println();
+
+    }
+}
+-------------------------------------------------------------------------------------
+
+57.	Write a program to reverse every word of the String.
+>   
+public class Rev {
+    public static void main(String args[]){
+        String str = "Jay deepika dabi rupali yash chetan";
+        String[] arrOfStr = str.split(" "); 
+        int size = arrOfStr.length;
+        // for(int i=size; i>0; i--) {
+        //    arr[i] = Integer.parseInt(arrOfStr[i]);
+        // }
+        for(int i=0; i<size; i++)
+            System.out.print(arrOfStr[i]+" ");
+            System.out.println();
+        for(int i=size-1; i>=0; i--)
+            System.out.print(arrOfStr[i]+" ");
+
+    }
+}
+-------------------------------------------------------------------------------------------------------
+58.	Store name of weekdays in an array (starting from “Sunday” at 0 index). Ask day position from user and print day name. Handle array index out of bound exception and give proper message if user enter day index outside range (0-6). 
+>   
+import java.util.Scanner;
+public class day_58 {
+    public static void main(String args[]){
+
+        String [] days = {"sunday", "monday", " tuesday", "wednusday", "thrusday", "friday", "saturady"};
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        try{
+        for(int i=0; i<days.length; i++){
+            if(days[num] == days[i])
+            {
+                System.out.println(days[num]);
+            }
+        }
+    }catch(ArrayIndexOutOfBoundsException a){
+        System.out.println(a);}
+    }
+}
+---------------------------------------------------------------------------------------------------
+
+59.	Create a class Voter(voterId, name, age) with parameterized constructor.  
+	The parameterized constructor should throw a checked exception if age is less than 18. 
+	The message of exception is “invalid age for voter ” 
+import java.io.IOException;
+import java.util.Scanner;
+class Voter{
+    int id;
+    String name;
+    int age;
+
+    Voter(int id, String name, int age) throws Exception{
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        if(age<18){
+            throw new Exception();
+        }
+    }
+}
+
+public class voter_59{
+    public static void main(String args[]){
+        int id, age;
+        String name;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter id, name & age :");
+        id = sc.nextInt();
+        name = sc.next();
+        age = sc.nextInt();
+        try{
+            Voter v = new Voter(id,name,age);
+        }
+        catch(Exception ex){
+            System.out.println("Invalid age entered");
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------
+
